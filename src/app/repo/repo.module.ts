@@ -9,6 +9,7 @@ import { RepoPageRoutingModule } from './repo-routing.module';
 import { RepoPage } from './repo.page';
 import { OwnerComponent } from './owner/owner.component';
 import { CommitersComponent } from './commiters/commiters.component';
+import { TimelineComponent } from './timeline/timeline.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { CommitersComponent } from './commiters/commiters.component';
   declarations: [
     RepoPage,
     OwnerComponent,
-    CommitersComponent
+    CommitersComponent,
+    TimelineComponent
   ]
 })
 export class RepoPageModule {}
