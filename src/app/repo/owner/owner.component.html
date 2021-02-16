@@ -1,0 +1,42 @@
+<div>
+
+  <ion-item lines="none">
+    <h3>Owner</h3>
+    
+    <ion-button 
+      (click)="removeFave()"
+      *ngIf="isFav | async; else elseBlock" 
+      slot="end">
+      <ion-icon slot="end" name="star"></ion-icon>
+      added to favorites
+    </ion-button>
+
+    <ng-template #elseBlock>
+      <ion-button
+        (click)="addFav()" 
+        color="light" 
+        slot="end">
+        <ion-icon slot="end" name="star"></ion-icon>
+        add to favorites
+      </ion-button>
+    </ng-template>
+
+
+
+  </ion-item>
+
+  <ion-card>
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="repo.avatar">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{repo.name}}</h2>
+          <h3>{{repo.owner}}</h3>
+          <p>{{repo.description}}</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</div>

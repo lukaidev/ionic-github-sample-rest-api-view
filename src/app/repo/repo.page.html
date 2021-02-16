@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tabs/favorites"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Repository
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngIf="repoAnalytics$ | async as analytics">
+    <ion-row>
+      <ion-col>
+        <app-owner [repo]="repo"></app-owner>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <app-commiters 
+          [commiters]="analytics.commitersInfo"
+          [size]="analytics.totalCommits">
+        </app-commiters>
+      </ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

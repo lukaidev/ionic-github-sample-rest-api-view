@@ -1,0 +1,24 @@
+<div>
+  <ion-item lines="none">
+    <h3>Commiters</h3>
+  </ion-item>
+
+  <ion-card *ngFor="let commiter of commiters">
+    <ion-card-content>
+      <ion-item lines="none">
+        <ion-avatar slot="start">
+          <img [src]="commiter.avatar">
+        </ion-avatar>
+        <ion-label>
+          <h2>{{commiter.login}}</h2>
+          <h3>{{commiter.email}}</h3>
+        </ion-label>
+      </ion-item>
+      <ion-label>Commit Percentage</ion-label>
+      <ion-progress-bar 
+        [value]="getPercent(commiter.commitCount)">
+      </ion-progress-bar>
+    </ion-card-content>
+  </ion-card>
+
+</div>

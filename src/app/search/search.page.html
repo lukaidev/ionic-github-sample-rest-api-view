@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-item>
+      <ion-searchbar 
+        placeholder="Since"
+        (keypress)=isNumberKey($event)
+        [(ngModel)]="search">
+      </ion-searchbar>
+      <ion-button color="light" (click)="onSearch()">Go</ion-button>
+    </ion-item> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-search-list [repos]="data$ | async"></app-search-list>
+</ion-content>

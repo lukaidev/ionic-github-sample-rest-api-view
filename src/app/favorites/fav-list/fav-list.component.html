@@ -1,0 +1,20 @@
+
+<ion-list>
+  <ion-list-header>
+    Repositories
+  </ion-list-header>
+  <ion-item
+    (click)="selectRepo(repo)" 
+    href="javascript:void(0)" 
+    *ngFor="let repo of repos">
+    <ion-avatar slot="start">
+      <img [src]="repo.avatar">
+    </ion-avatar>
+    <ion-label>
+      <h2>{{repo.name}}</h2>
+      <h3>{{repo.owner}}</h3>
+      <p>{{repo.description}}</p>
+    </ion-label>
+  </ion-item>
+
+</ion-list>
